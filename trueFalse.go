@@ -25,7 +25,7 @@ func compare(value int) string {
 func main() {
 	var guess int
 	fmt.Println("Enter an integer value from 1 to 100: ")
-	fmt.Scanln(&guess)
+	_, _ = fmt.Scanln(&guess)
 	resultMessage := compare(guess)
 	fmt.Println(resultMessage)
 }
