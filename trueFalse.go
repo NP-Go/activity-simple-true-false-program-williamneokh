@@ -8,25 +8,24 @@ func compare(value int) string {
 	secretValue := 88
 
 	if value == secretValue {
-		fmt.Println("Well done! your guess is correct.")
+		return "Well Done! Your guess is correct"
+	} else if value < secretValue {
+		return "Too low, try again next time!"
+	} else if value > secretValue {
+		return "Too high, try again next time!"
+	} else {
+		return resultMessage
 	}
-	if value < secretValue {
-		fmt.Println("Too low, try again next time!")
-	}
-
-	if value > secretValue {
-		fmt.Println("Too high, try again next time!")
-	}
-
 	//Insert your code from here
 
 	//do not remove this line
-	return resultMessage
+
 }
 
 func main() {
 	var guess int
 	fmt.Println("Enter an integer value from 1 to 100: ")
 	fmt.Scanln(&guess)
-	compare(guess)
+	resultMessage := compare(guess)
+	fmt.Println(resultMessage)
 }
